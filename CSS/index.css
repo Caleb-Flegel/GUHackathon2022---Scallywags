@@ -12,7 +12,7 @@ body {
 }
 
 #top-bar {
-    height: 20%;
+    height: 8%;
     width: 100%;
 
     background-color: var(--teamMainColor);
@@ -20,7 +20,8 @@ body {
 
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content:space-between;
+    vertical-align: middle;
 
     margin: 0px;
     padding: 1%;
@@ -32,26 +33,32 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
+    align-items: center;
 }
 
 #map {
-    height: 750px;;
+    height: 90vh;
     width: 80%;
 }
 
 #side-bar {
     width: 20%;
-
+    
     background-color: var(--teamSecondColor);
     color: var(--teamThirdColor);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .teamInfo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.claim {
+    visibility: hidden;
 }
