@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        
+    </title>
+  
+    <!-- Loading map API -->
+    <script src=
+        "https://maps.googleapis.com/maps/api/js">
+    </script>
+         
+    <script>
+        function GFG() {
+               
+            var CustomOp = {
+                center:new google.maps.LatLng(
+                            47.6588, -117.4260), 
+                zoom:10, 
+                mapTypeId:google.maps.MapTypeId.HYBRID
+            };
+               
+            // Map object
+            var map = new google.maps.Map(
+                document.getElementById("DivID"),
+                CustomOp
+            );
+        }
+    </script>
+</head>
+  
+<!-- load map -->
+<body onload = "GFG()">
+    <center>
+        <h1 style="color:crimson">Garbage Ctrl</h1>
+        <h3>Google Maps</h3>
+          
+        <!-- Basic Container -->
+        <div id = "DivID" style=
+            "width:1050px; height:775px;">
+        </div>
+    </center>
+    <div></div>
+</body>
+      
+</html>
