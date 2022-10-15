@@ -1,0 +1,101 @@
+html {
+    color: whitesmoke;
+    font-family:"Montserrat";
+    margin: 0px;
+    height: 100%;
+    background-image: url("../CSS/IMG/background.png");
+}
+body {
+    display:grid;
+    grid-template-rows: 10% auto;
+    margin: 0;
+    height: 100%;
+    justify-items: center;
+}
+.pageContent{
+    justify-self:flex-start;
+} 
+#tables {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-left: 50px;
+}
+#webLinks {
+    border: 2px solid yellow;
+    border-radius: 6px;
+    width: 80vh;
+}
+#images {
+    border: 2px solid yellow;
+    border-radius: 6px;
+    width: 80vh;
+    text-align: center;
+}
+#tableHead {
+    font-size: 36pt;
+    color: #7c60b8;
+    border-bottom: white 1px solid;
+    text-align: center;
+}
+.source {
+    padding-right: 10px;
+    width: auto;
+    font-size: 1.5rem;
+    text-align: end;
+}
+#link {
+    font-size-adjust: 1.5rem;
+    padding: 10px;
+}
+#bottom {
+    border-top: 1px solid white;
+}
+#caption {
+    text-align: center;
+    font-size: 10pt;
+    border-top: 1px solid white;
+    padding: 10px;
+}
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: large;
+}
+a:hover{
+    color:#7c60b8;
+}
+img:hover {
+    width: 148px;
+    border: 1px solid yellow;
+}
+
+/* This css is for the menu at the top */
+.topBar {
+    display:flex;
+    justify-items:left;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.250);
+    align-items: center;
+    
+}
+
+.topBar>h1{
+    margin:.4em;
+}
+
+nav{ 
+    display:flex;
+    margin: 1em; 
+} 
+
+nav>ul{
+    list-style: none;
+    display:grid;
+    grid-template-columns:auto auto auto;
+    
+}
+
+nav>ul li{
+    margin: 1em;
+}

@@ -1,0 +1,148 @@
+
+html {
+    color: whitesmoke;
+    font-family:"Montserrat";
+    margin: 0;
+    height: 100%;
+    background-image: url("../CSS/IMG/background.png");
+}
+        
+a {
+    color: whitesmoke;
+    text-decoration:none;
+    font-size:large;
+}
+a:hover{
+    color:#7c60b8;
+}
+
+body {
+    display:grid;
+    grid-template-rows: 10% auto;
+    margin: 0;
+    height: 100%;
+    justify-items: center;
+    overflow:hidden;
+    
+}   
+
+button {
+    border: none;
+    padding:0.5em;
+    background-color: #7c60b8;
+    border-radius: 1em;
+    color:whitesmoke;
+    outline:none;
+    align-self:center;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color:  #7c60b8;
+}
+
+/* This css is for the menu at the top */
+.topBar {
+    display:flex;
+    justify-items:left;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.250);
+    align-items: center;
+    
+}
+
+.topBar>h1{
+    margin:.4em;
+}
+
+nav{ 
+    display:flex;
+    margin: 1em; 
+} 
+
+nav>ul{
+    list-style: none;
+    display:grid;
+    grid-template-columns:auto auto auto;
+    
+}
+
+nav>ul li{
+    margin: 1em;
+}
+
+.frontPage{
+    justify-self: left;
+}
+
+#Triceratops-div {
+    width: 330px;
+    top: 350px;
+    left: 0px;
+    z-index: 3;
+    position: absolute;
+}
+
+div#Moon {
+    top: 535px;
+    position: absolute;
+    width:3000px;
+    height:1040px;
+    margin:auto;
+    background-image: url(../CSS/IMG/newForeground.png);
+    z-index: -1;
+}
+
+div#Planets {
+    top: 100px;
+    width:3000px;
+    height:540px;
+    position: absolute;
+    margin: auto;
+    background-image: url(../CSS/IMG/newMiddle.png);
+    z-index: -2;
+    border-top: 2px solid yellow;  
+    margin-top: 2px;
+}
+
+div#Astroid {
+    background-image: url(../CSS/IMG/AstroidLong.png);
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+    width: 3000px;
+    height: 400px;
+    background-repeat: repeat;
+    margin: auto;
+}
+
+div#Rover {
+    z-index: 1;
+    position: absolute;
+    bottom: 30px;
+    width: 3000px;
+    height: 150px;
+    background-image: url(../CSS/IMG/roverObstacle.png);
+}
+
+div#Background {
+    position: absolute;
+    width:3000px;
+    height:540px;
+    background-image: url(../CSS/IMG/background.png);
+    z-index: -3;
+}
+
+#scoreSpot {
+    z-index: 6;
+    top: 54px;
+    left: 35px;
+    width: 300px;
+    font-size: 36pt;
+    position: absolute;
+    border: 2px solid yellow;
+    background-color: rgba(0, 0, 0, 0.250);
+    border-radius: 4px;
+}
+

@@ -1,0 +1,85 @@
+html {
+    color: whitesmoke;
+    font-family:"Montserrat";
+    margin: 0;
+    height: 100%;
+    background-image: url("../CSS/IMG/background.png");
+}
+
+body {
+    display:grid;
+    grid-template-rows: 10% auto;
+    margin: 0;
+    height: 100%;
+}   
+
+.designContent{
+    margin:8px;
+    padding-left:200px;
+ 
+}
+
+h2 {
+    color:#ffffff;
+    font-size: 22pt;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration:none;
+    font-size:large;
+}
+a:hover{
+    color:#7c60b8;
+}
+
+/* This css is for the menu at the top */
+.topBar {
+    display:flex;
+    justify-items:left;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.250);
+    align-items: center;
+}
+
+.topBar>h1{
+    margin:.4em; 
+}
+
+nav{ 
+    display:flex;
+    margin: 1em;
+} 
+
+nav>ul{
+    list-style: none;
+    display:grid;
+    grid-template-columns:auto auto auto;
+    
+}
+
+nav>ul li{
+    margin: 1em;
+}
+
+.majorConcepts>ol{
+    list-style-type:square;
+}
+
+
+.majorConcepts>ol>li{
+    margin: 10px 0;
+    font-size: 15pt;
+}
+
+.changes>table,td,th{
+    font-size: 15pt;
+}
+
+.changes>table,th{
+    text-align: left;
+}
+
+.newArt>img{
+    width: auto;
+}

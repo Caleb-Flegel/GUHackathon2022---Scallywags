@@ -1,0 +1,28 @@
+.container>img {
+    width:100%;
+    height:1000px;
+    margin: 0;
+    padding: 0;
+ }
+
+
+.planet1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom:800px;
+    left: 100px;
+}
+
+.ground{
+    position: absolute;
+    bottom:-5px;
+}
+
+
+ .player{
+    position:absolute;
+    bottom:40px;
+ }
+
+ 

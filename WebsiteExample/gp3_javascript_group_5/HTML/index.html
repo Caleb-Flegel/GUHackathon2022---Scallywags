@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> 
+    
+    <head> 
+        <meta charset="UTF-8">
+        <title>Group Project 1</title>
+        <link rel="stylesheet" href="../CSS/index.css">
+        <!-- These links are for the font. Using "Montserrat" -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+    
+    <body><!-- The body is split into 2 parts, The overhead menu and the rest of the content -->
+
+        
+        <div class = "topBar">
+            <h1>SPACE DINO</h1>
+            <!-- <p>The broken internet chrome game but with a new space twist.</p> -->
+            <nav>
+
+                <!-- Start of menu items -->
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+
+                    <li><a href="design.html">DESIGN</a></li>
+                
+                    <li><a href="resources.html">RESOURCES</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="frontPage">
+
+            <div id=Background></div>
+            <div id="Moon"></div>
+            <div id="Planets"></div>
+            <div id="Astroid"></div>
+            <div id="Rover"></div>
+
+            <script src="../JavaScript/index.js" defer></script>
+            <script src="../JavaScript/jquery-1.11.1.js"></script>
+            
+            <div id="Triceratops-div"></div>
+
+            <div>
+                <p id="scoreSpot">Score: <span id="score"></span></p>
+            </div>
+            
+            <button id="strtBttn" style="width: 100px; height: 30px; left: 45vw; top:45vh; position: fixed; z-index: 9;">Start</button>
+
+        </div>  
+    </body>
+</html>
