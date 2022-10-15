@@ -10,6 +10,31 @@
         <h1>GARBAGE_LAND</h1>
     </div>
     <div id="map"> 
+        <script>
+        function initMap() {
+            const mapDiv = document.getElementById('map')
+            const options = {
+                zoom: 12,
+                maxZoom: 14,
+                minZoom: 10,
+                center: { lat: 47.6588, lng: -117.4260 }
+            }
+            const map = new google.maps.Map(mapDiv, options);
+            
+            // MARKER STUFF BELOW THIS
+            const marker = new google.maps.Marker({
+                position: { lat: 47.6588, lng: -117.4260 },
+                map: map,
+                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            });
+            const infoWindow = new google.maps.InfoWindow({
+                content: `<h1>Spokane, WA</h1>`
+            })
+            marker.addListener('click', function () {
+                infoWindow.open(map, marker)
+            })
+        }
+        </script>
         <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFpZV8zXmHSIl-LqDz4WUHP9J6Yy4-MI4&callback=initMap">
         </script>
