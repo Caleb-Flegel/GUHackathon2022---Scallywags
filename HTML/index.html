@@ -22,7 +22,7 @@
         </div>
     </div>
     <div id="map-canvas" style = "width: 1670px; height: 800px;"> </div>
-    <script>
+        <script>
         var map;
         var marker1;
         var marker2;
@@ -105,22 +105,57 @@
             var m2Lat = marker2.getPosition().lat();
             var m2Lng = marker2.getPosition().lng();
             // Nested for loop to generate the grid itself
-            var black = '#000000'
-            var white = '#FFFFFF'
-            var red = '#FF0000'
-            var green = '#00FF00'
-            var blue = '#0000FF'
-            var pacy
-            var color
+            var black = '#000000';
+            var white = '#FFFFFF';
+            var red = '#FF0000';
+            var green = '#00FF00';
+            var blue = '#0000FF';
+            var pacy;
+            var color;
+
+            // Sample Squares
+            var obj = {faction: red, xcor: 5, ycor: 6};
+            var arr = [obj];
+            arr[1] = {faction: red, xcor: 5, ycor: 7};
+            arr[2] = {faction: red, xcor: 5, ycor: 8};
+            arr[3] = {faction: red, xcor: 6, ycor: 6};
+            arr[4] = {faction: red, xcor: 6, ycor: 7};
+            arr[5] = {faction: red, xcor: 6, ycor: 8};
+            arr[6] = {faction: red, xcor: 6, ycor: 9};
+            arr[7] = {faction: blue, xcor: 7, ycor: 7};
+            arr[8] = {faction: red, xcor: 7, ycor: 8};
+            arr[9] = {faction: blue, xcor: 7, ycor: 9};
+
+            arr[10] = {faction: blue, xcor: 20, ycor: 20};
+            arr[11] = {faction: blue, xcor: 20, ycor: 21};
+            arr[12] = {faction: blue, xcor: 20, ycor: 22};
+            arr[13] = {faction: blue, xcor: 20, ycor: 23};
+            arr[14] = {faction: blue, xcor: 21, ycor: 21};
+            arr[15] = {faction: blue, xcor: 21, ycor: 22};
+            arr[16] = {faction: blue, xcor: 21, ycor: 23};
+            arr[17] = {faction: blue, xcor: 21, ycor: 24};
+            arr[18] = {faction: blue, xcor: 22, ycor: 22};
+            arr[19] = {faction: blue, xcor: 22, ycor: 23};
+            arr[20] = {faction: blue, xcor: 22, ycor: 24};
+            arr[21] = {faction: blue, xcor: 22, ycor: 25};
+            
             for (var i = 0; i < dividerLat; i++) {
                 if (!rectangleLng[i]) rectangleLng[i] = [];
                 for (var j = 0; j < dividerLng; j++) {
                     if (!rectangleLng[i][j]) rectangleLng[i][j] = {};
-                    //if(i % 2 == 0) {color = black, pacy = 0.5}
-                    //else {
-                    color = white
-                    pacy = 0.1
-                    //}
+                    // If there are squares that need to be highlighed: 
+                    if(arr.length > 0) {
+                        if(arr[0].xcor == i && arr[0].ycor == j) {
+                            color = arr[0].faction
+                            pacy = 0.5
+                            arr.shift()
+                        }
+                    }
+                    else {
+                        color = white
+                        pacy = 0.1
+                    }
+
                     rectangleLng[i][j] = new google.maps.Rectangle({
                         strokeColor: '#000000',
                         strokeOpacity: 0.4,
@@ -132,8 +167,8 @@
                             new google.maps.LatLng(m1Lat + (excLat * i), m1Lng + (excLng * j)),
                             new google.maps.LatLng(m1Lat + (excLat * (i + 1)), m1Lng + (excLng * (j + 1))))
                     });
+                    color = white
                 }
-
             }
         }
 
