@@ -1,6 +1,9 @@
 {
     "squares":[
-    { "X_Coords":25, "Y_Coords":34, "Faction":0, "Age":0, "Image":"/images/test.jpg"}
+    { "X_Coords":1, "Y_Coords":1, "Faction":0, "Age":0, "Image":"/images/test.jpg"},
+    { "X_Coords":23, "Y_Coords":23, "Faction":1, "Age":3, "Image":"/images/spongebob.jpg"},
+    { "X_Coords":44, "Y_Coords":44, "Faction":2, "Age":5, "Image":"/images/open.jpg"},
+    { "X_Coords":50, "Y_Coords":50, "Faction":3, "Age":6, "Image":"/images/toolbar.jpg"}    
     ]
 
 }
