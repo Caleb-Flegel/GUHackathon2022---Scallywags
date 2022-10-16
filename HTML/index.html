@@ -12,7 +12,7 @@
 
 <body>
     <div id="top-bar">
-        <h1>Tiles of land cleaned: 154</h1>
+        <h1>Tiles cleaned: 154</h1>
         <h1>Tiled ~ Cleaning neighborhoods one Tile at a time</h1>
         <div class="profileInfo">
             <h1>Mr. Clean</h1>
@@ -31,7 +31,7 @@
         function initialize() {
             // Map options declared here:
             var mapOptions = {
-                zoom: 13,
+                zoom: 15,
                 maxZoom: 20,
                 minZoom: 13,
                 center: new google.maps.LatLng(47.6586, -117.4258)
@@ -200,7 +200,7 @@
         </div>
         <div class="teamStats">
             <div class="teamInfo">
-                <h2 class="teamName">Whitworth Scallywags</h2>
+                <h2 class="teamName">Scallywags</h2>
                 <!--<img class="teamLogo" src="../CSS/Images/ceiling tape.jpg" alt="Team Logo" height="100">-->
             </div>
             <table>
@@ -210,7 +210,7 @@
                 </tr>
                 <tr>
                     <td>Team population:</td>
-                    <td class="teamPopulation">3</td>
+                    <td class="teamPopulation">7</td>
                 </tr>
             </table>
         </div>
@@ -218,18 +218,34 @@
             <h2>Personal Stats</h2>
             <table>
                 <tr>
-                    <td>Squares claimed by you: </td>
-                    <td class="individualSquares">0</td>
+                    <td>Squares cleaned by you: </td>
+                    <td class="individualSquares">5</td>
                 </tr>
             </table>
         </div>
         <div class="claim">
-            <h2>Claim this tile?</h2>
-            <form action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
-                <br></br>
-                <input type="submit">
-            </form>
+            <h2>Claim a tile?</h2>
+            <label for="xTile">Tile x position?</label>
+            <input type="number" id="xTile" label="xTile" min="1" max="100">
+
+            <br></br>
+
+            <label for="yTile">Tile y position?</label>
+            <input type="number" id="yTile" label="yTile" min="1" max="100">
+
+            <br></br>
+
+            <label for="faction">Faction:</label>
+            <select name="Faction" label="faction"><option value="None" selected>None</option>
+            <option value="Scallywags">Scallywags</option>
+            <option value="Corsairs">Corsairs</option>
+            <option value="Buccaneers">Buccaneers</option>
+            </select>
+
+            <br></br>
+
+            <input type="submit">
+
         </div>
     </div>
     </div>
