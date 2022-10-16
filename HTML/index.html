@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="garbageLand" content="width=device-width, initial-scale=1.0">
     <title>GARBAGE_LAND</title>
     <link rel="stylesheet" href="../CSS/index.css">
     <script type="text/javascript" src="\JavaScript\backend.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBptR3JBbWUneVy8hGjk2t14N73qL4an6Y"> </script>
 </head>
+
 <body>
     <div id="top-bar">
         <h1>Squares of garbage cleaned: 0</h1>
@@ -18,8 +21,8 @@
             </div>
         </div>
     </div>
-        <div id="map-canvas"> 
-            <script>
+    <div id="map-canvas" style = "width: 1670px; height: 800px;"> </div>
+    <script>
         var map;
         var marker1;
         var marker2;
@@ -115,8 +118,8 @@
                     if (!rectangleLng[i][j]) rectangleLng[i][j] = {};
                     //if(i % 2 == 0) {color = black, pacy = 0.5}
                     //else {
-                        color = white
-                        pacy = 0.1
+                    color = white
+                    pacy = 0.1
                     //}
                     rectangleLng[i][j] = new google.maps.Rectangle({
                         strokeColor: '#000000',
@@ -136,66 +139,65 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-            <script async
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFpZV8zXmHSIl-LqDz4WUHP9J6Yy4-MI4&callback=initMap">
-            </script>
+
+    </div>
+    <div id="side-bar">
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <table class="leaderboardTable">
+                <tr>
+                    <th>User</th>
+                    <th>Squares Cleaned</th>
+                </tr>
+                <tr>
+                    <td>Sarah Park</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>James Monroe</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>John Smith</td>
+                    <td>8</td>
+                </tr>
+            </table>
         </div>
-        <div id="side-bar">
-            <div class="leaderboard">
-                <h2>Leaderboard</h2>
-                <table class="leaderboardTable">
-                    <tr>
-                        <th>User</th>
-                        <th>Squares Cleaned</th>
-                    </tr>
-                    <tr>
-                        <td>Sarah Park</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>James Monroe</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>John Smith</td>
-                        <td>8</td>
-                    </tr>
-                </table>
+        <div class="teamStats">
+            <div class="teamInfo">
+                <h2 class="teamName">Whitworth Scallywags</h2>
+                <!--<img class="teamLogo" src="../CSS/Images/ceiling tape.jpg" alt="Team Logo" height="100">-->
             </div>
-            <div class="teamStats">
-                <div class="teamInfo">
-                    <h2 class="teamName">Whitworth Scallywags</h2>
-                    <!--<img class="teamLogo" src="../CSS/Images/ceiling tape.jpg" alt="Team Logo" height="100">-->
-                </div>
-                <table>
-                    <tr>
-                        <td>Squares cleaned by team:</td>
-                        <td class="teamSquares">29</td>
-                    </tr>
-                    <tr>
-                        <td>Team population:</td>
-                        <td class="teamPopulation">3</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="individualStats">
-                <h2>Personal Stats</h2>
-                <table>
-                    <tr>
-                        <td>Squares claimed by you: </td>
-                        <td class="individualSquares">0</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="claim">
-                <h2>Claim this tile?</h2>
-                <form action="/action_page.php">
-                    <input type="file" id="myFile" name="filename">
-                    <br></br>
-                    <input type="submit">
-                </form>
-            </div>
+            <table>
+                <tr>
+                    <td>Squares cleaned by team:</td>
+                    <td class="teamSquares">29</td>
+                </tr>
+                <tr>
+                    <td>Team population:</td>
+                    <td class="teamPopulation">3</td>
+                </tr>
+            </table>
+        </div>
+        <div class="individualStats">
+            <h2>Personal Stats</h2>
+            <table>
+                <tr>
+                    <td>Squares claimed by you: </td>
+                    <td class="individualSquares">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="claim">
+            <h2>Claim this tile?</h2>
+            <form action="/action_page.php">
+                <input type="file" id="myFile" name="filename">
+                <br></br>
+                <input type="submit">
+            </form>
         </div>
     </div>
+    </div>
 </body>
+
 </html>
