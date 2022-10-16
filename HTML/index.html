@@ -18,92 +18,92 @@
             </div>
         </div>
     </div>
-    <div id="map"> 
-        <script>
-        function initMap() {
-            const mapDiv = document.getElementById('map')
-            const options = {
-                zoom: 12,
-                maxZoom: 14,
-                minZoom: 10,
-                center: { lat: 47.6588, lng: -117.4260 }
+        <div id="map"> 
+            <script>
+            function initMap() {
+                const mapDiv = document.getElementById('map')
+                const options = {
+                    zoom: 12,
+                    maxZoom: 14,
+                    minZoom: 10,
+                    center: { lat: 47.6588, lng: -117.4260 }
+                }
+                const map = new google.maps.Map(mapDiv, options);
+                
+                // MARKER STUFF BELOW THIS
+                const marker = new google.maps.Marker({
+                    position: { lat: 47.6588, lng: -117.4260 },
+                    map: map,
+                    icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                });
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<h1>Spokane, WA</h1>`
+                })
+                marker.addListener('click', function () {
+                    infoWindow.open(map, marker)
+                })
             }
-            const map = new google.maps.Map(mapDiv, options);
-            
-            // MARKER STUFF BELOW THIS
-            const marker = new google.maps.Marker({
-                position: { lat: 47.6588, lng: -117.4260 },
-                map: map,
-                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-            });
-            const infoWindow = new google.maps.InfoWindow({
-                content: `<h1>Spokane, WA</h1>`
-            })
-            marker.addListener('click', function () {
-                infoWindow.open(map, marker)
-            })
-        }
-        </script>
-        <script async
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFpZV8zXmHSIl-LqDz4WUHP9J6Yy4-MI4&callback=initMap">
-        </script>
-    </div>
-    <div id="side-bar">
-        <div class="leaderboard">
-            <h2>Leaderboard</h2>
-            <table class="leaderboardTable">
-                <tr>
-                    <th>User</th>
-                    <th>Squares Cleaned</th>
-                </tr>
-                <tr>
-                    <td>Sarah Park</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>James Monroe</td>
-                    <td>9</td>
-                </tr>
-                <tr>
-                    <td>John Smith</td>
-                    <td>8</td>
-                </tr>
-            </table>
+            </script>
+            <script async
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFpZV8zXmHSIl-LqDz4WUHP9J6Yy4-MI4&callback=initMap">
+            </script>
         </div>
-        <div class="teamStats">
-            <div class="teamInfo">
-                <h2 class="teamName">Whitworth Scallywags</h2>
-                <!--<img class="teamLogo" src="../CSS/Images/ceiling tape.jpg" alt="Team Logo" height="100">-->
+        <div id="side-bar">
+            <div class="leaderboard">
+                <h2>Leaderboard</h2>
+                <table class="leaderboardTable">
+                    <tr>
+                        <th>User</th>
+                        <th>Squares Cleaned</th>
+                    </tr>
+                    <tr>
+                        <td>Sarah Park</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>James Monroe</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>8</td>
+                    </tr>
+                </table>
             </div>
-            <table>
-                <tr>
-                    <td>Squares cleaned by team:</td>
-                    <td class="teamSquares">29</td>
-                </tr>
-                <tr>
-                    <td>Team population:</td>
-                    <td class="teamPopulation">3</td>
-                </tr>
-            </table>
-        </div>
-        <div class="individualStats">
-            <h2>Personal Stats</h2>
-            <table>
-                <tr>
-                    <td>Squares claimed by you: </td>
-                    <td class="individualSquares">0</td>
-                </tr>
-            </table>
-        </div>
-        <div class="claim">
-            <h2>Claim this tile?</h2>
-            <form action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
-                <br></br>
-                <input type="submit">
-            </form>
+            <div class="teamStats">
+                <div class="teamInfo">
+                    <h2 class="teamName">Whitworth Scallywags</h2>
+                    <!--<img class="teamLogo" src="../CSS/Images/ceiling tape.jpg" alt="Team Logo" height="100">-->
+                </div>
+                <table>
+                    <tr>
+                        <td>Squares cleaned by team:</td>
+                        <td class="teamSquares">29</td>
+                    </tr>
+                    <tr>
+                        <td>Team population:</td>
+                        <td class="teamPopulation">3</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="individualStats">
+                <h2>Personal Stats</h2>
+                <table>
+                    <tr>
+                        <td>Squares claimed by you: </td>
+                        <td class="individualSquares">0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="claim">
+                <h2>Claim this tile?</h2>
+                <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                    <br></br>
+                    <input type="submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>
 </html>
-<input type="button" onclick="plswork()" value="run external javascript">

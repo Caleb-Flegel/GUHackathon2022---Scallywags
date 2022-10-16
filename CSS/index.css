@@ -12,8 +12,8 @@ body {
 }
 
 #top-bar {
-    height: 8%;
-    width: 100%;
+    height: 5%;
+    width: 100vw;
 
     background-color: var(--teamMainColor);
     color: var(--teamThirdColor);
@@ -24,7 +24,8 @@ body {
     vertical-align: middle;
 
     margin: 0px;
-    padding: 1%;
+    padding-left: 40px;
+    padding-right: 40px;
     border-width: 2px;
     border: var(--teamSecondColor);
 }
@@ -38,11 +39,11 @@ body {
 
 #map {
     height: 90vh;
-    width: 80%;
+    width: 88%;
 }
 
 #side-bar {
-    width: 20%;
+    width: 12%;
     
     background-color: var(--teamSecondColor);
     color: var(--teamThirdColor);
