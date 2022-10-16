@@ -20,30 +20,122 @@
     </div>
         <div id="map"> 
             <script>
-            function initMap() {
-                const mapDiv = document.getElementById('map')
-                const options = {
-                    zoom: 12,
-                    maxZoom: 14,
-                    minZoom: 10,
-                    center: { lat: 47.6588, lng: -117.4260 }
+        var map;
+        var marker1;
+        var marker2;
+        var rectangle;
+        var infowindow = new google.maps.InfoWindow();
+        function initialize() {
+            // Map options declared here:
+            var mapOptions = {
+                zoom: 13,
+                maxZoom: 20,
+                minZoom: 13,
+                center: new google.maps.LatLng(47.6586, -117.4258)
+            };
+            // Making the map appear
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+            // Reference Marker 1 Creation
+            marker1 = new google.maps.Marker({
+                position: new google.maps.LatLng(47.757957, -117.518134),
+                map: map,
+                draggable: true,
+                title: 'marker1'
+            });
+            // If marker is clicked show its coords :)
+            google.maps.event.addListener(marker1, 'click', function (evt) {
+                infowindow.setContent(marker1.getPosition().toUrlValue(6));
+                infowindow.open(map, this);
+            });
+            // Reference Marker 2 Creation
+            marker2 = new google.maps.Marker({
+                position: new google.maps.LatLng(47.597529, -117.319276),
+                map: map,
+                draggable: true,
+                title: 'marker2'
+            });
+            // If marker is clicked show its coords :)
+            google.maps.event.addListener(marker2, 'click', function (evt) {
+                infowindow.setContent(marker1.getPosition().toUrlValue(6));
+                infowindow.open(map, this);
+            });
+            // Making b i g rectangle
+            rectangle = new google.maps.Rectangle({
+                strokeColor: '#FFFFFF',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FFFFFF',
+                fillOpacity: 0.1,
+                map: map,
+                bounds: new google.maps.LatLngBounds(
+                    marker1.getPosition(),
+                    marker2.getPosition())
+            });
+            makeGrid(); // call makeGrid
+        }
+
+        // Array to store x,y coordinates
+        var rectangleLng = [];
+
+        function makeGrid() {
+            for (x in rectangleLng) {
+                for (y in rectangleLng[x]) {
+                    if (rectangleLng[x][y].setMap) {
+                        rectangleLng[x][y].setMap(null)
+                        rectangleLng[x][y] = null;
+                    }
                 }
-                const map = new google.maps.Map(mapDiv, options);
-                
-                // MARKER STUFF BELOW THIS
-                const marker = new google.maps.Marker({
-                    position: { lat: 47.6588, lng: -117.4260 },
-                    map: map,
-                    icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-                });
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `<h1>Spokane, WA</h1>`
-                })
-                marker.addListener('click', function () {
-                    infoWindow.open(map, marker)
-                })
             }
-            </script>
+            // Distance variables for grid generation
+            var leftSideDist = marker2.getPosition().lng() - marker1.getPosition().lng();
+            var belowSideDist = marker2.getPosition().lat() - marker1.getPosition().lat();
+
+            // Dimensions of Grid Variables Here, 100x100 generated rectangle
+            var dividerLat = 100;
+            var dividerLng = 100;
+            var excLat = belowSideDist / dividerLat;
+            var excLng = leftSideDist / dividerLng;
+            // Lat/Long values of markers 1 and 2
+            var m1Lat = marker1.getPosition().lat();
+            var m1Lng = marker1.getPosition().lng();
+            var m2Lat = marker2.getPosition().lat();
+            var m2Lng = marker2.getPosition().lng();
+            // Nested for loop to generate the grid itself
+            var black = '#000000'
+            var white = '#FFFFFF'
+            var red = '#FF0000'
+            var green = '#00FF00'
+            var blue = '#0000FF'
+            var pacy
+            var color
+            for (var i = 0; i < dividerLat; i++) {
+                if (!rectangleLng[i]) rectangleLng[i] = [];
+                for (var j = 0; j < dividerLng; j++) {
+                    if (!rectangleLng[i][j]) rectangleLng[i][j] = {};
+                    //if(i % 2 == 0) {color = black, pacy = 0.5}
+                    //else {
+                        color = white
+                        pacy = 0.1
+                    //}
+                    rectangleLng[i][j] = new google.maps.Rectangle({
+                        strokeColor: '#000000',
+                        strokeOpacity: 0.4,
+                        strokeWeight: 1,
+                        fillColor: color,
+                        fillOpacity: pacy,
+                        map: map,
+                        bounds: new google.maps.LatLngBounds(
+                            new google.maps.LatLng(m1Lat + (excLat * i), m1Lng + (excLng * j)),
+                            new google.maps.LatLng(m1Lat + (excLat * (i + 1)), m1Lng + (excLng * (j + 1))))
+                    });
+                }
+
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
             <script async
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFpZV8zXmHSIl-LqDz4WUHP9J6Yy4-MI4&callback=initMap">
             </script>
